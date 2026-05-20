@@ -1,0 +1,590 @@
+/* =========================================================
+   DEBSWANA DIAMOND COMPANY - GLOBAL STYLES
+   Theme: Black + Gold + White (luxury diamond feel)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #0b0b0d;
+  --bg-2: #141418;
+  --surface: #1c1c22;
+  --text: #f5f5f5;
+  --muted: #b9b9c2;
+  --gold: #d4af37;
+  --gold-2: #f1c84b;
+  --gold-soft: rgba(212, 175, 55, 0.15);
+  --white: #ffffff;
+  --green: #4caf82;
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  --radius: 14px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light mode */
+body.light {
+  --bg: #fafaf7;
+  --bg-2: #ffffff;
+  --surface: #ffffff;
+  --text: #14141a;
+  --muted: #4a4a55;
+  --gold: #b8902a;
+  --gold-2: #d4af37;
+  --gold-soft: rgba(184, 144, 42, 0.12);
+  --white: #14141a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background var(--transition), color var(--transition);
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.5px; }
+h1 { font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1.1; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 1rem; }
+h3 { font-size: 1.4rem; margin-bottom: 0.6rem; }
+
+.container { width: 92%; max-width: 1200px; margin: 0 auto; }
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(11, 11, 13, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  transition: background var(--transition);
+}
+body.light .navbar { background: rgba(255, 255, 255, 0.9); border-bottom: 1px solid rgba(184, 144, 42, 0.2); }
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 4px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-links a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 4px 0;
+  transition: color var(--transition);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width var(--transition);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+.theme-toggle {
+  background: var(--gold-soft);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+.theme-toggle:hover { background: var(--gold); color: #000; }
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition);
+  letter-spacing: 0.5px;
+}
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-2), var(--gold));
+  color: #0b0b0d;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+.btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5); }
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+.btn-outline:hover { background: var(--gold); color: #0b0b0d; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6rem 0 2rem;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(11, 11, 13, 0.65), rgba(11, 11, 13, 0.85)),
+    url('images/mine_pit.jpg') center/cover;
+  z-index: -1;
+}
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  z-index: 1;
+  padding: 0 1rem;
+}
+.hero-content .tagline {
+  color: var(--gold);
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.2s forwards;
+}
+.hero-content h1 {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff 30%, var(--gold) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.4s forwards;
+}
+.hero-content p {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto; margin-right: auto;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.6s forwards;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.8s forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+section { padding: 6rem 0; }
+.section-title { text-align: center; margin-bottom: 3.5rem; }
+.section-title .eyebrow {
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+}
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; left: 50%;
+  transform: translateX(-50%);
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Image Feature Card (replaces icon-cards everywhere) */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.image-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.image-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.image-card .photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.image-card .photo-tall { height: 280px; }
+.image-card .body { padding: 1.5rem 1.6rem 1.8rem; }
+.image-card .body h3 { color: var(--text); margin-bottom: 0.6rem; }
+.image-card .body p { color: var(--muted); font-size: 0.95rem; }
+.image-card .body .step-num {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.4rem;
+}
+.image-card .body .meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--gold);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+.image-card .badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
+}
+
+/* Stats / Impact */
+.impact {
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.impact::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--gold-soft) 0%, transparent 70%);
+  top: -300px; right: -300px;
+  pointer-events: none;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+.stat-card {
+  background: var(--surface);
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--radius);
+  border-top: 3px solid var(--gold);
+  transition: transform var(--transition);
+}
+.stat-card:hover { transform: translateY(-6px); }
+.stat-num {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--gold);
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+.stat-label {
+  color: var(--muted);
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Diamond price ticker */
+.ticker {
+  background: var(--surface);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+}
+.ticker-label {
+  color: var(--gold);
+  font-weight: 700;
+  white-space: nowrap;
+  padding-right: 1rem;
+  border-right: 1px solid rgba(212, 175, 55, 0.3);
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+.ticker-track {
+  display: flex;
+  gap: 3rem;
+  animation: tickerScroll 35s linear infinite;
+  white-space: nowrap;
+}
+.ticker-item { font-size: 0.95rem; color: var(--muted); }
+.ticker-item span.up { color: #4caf82; }
+.ticker-item span.down { color: #ff6b6b; }
+.ticker-item strong { color: var(--text); margin-right: 0.5rem; }
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Map embed */
+.map-embed {
+  width: 100%;
+  height: 420px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius);
+  margin-top: 1rem;
+}
+
+/* Forms */
+.form {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+.form-group { margin-bottom: 1.2rem; }
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color var(--transition);
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-soft);
+}
+.form-group textarea { min-height: 120px; resize: vertical; }
+
+/* Two column */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.two-col img { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; height: auto; }
+.two-col .text p { color: var(--muted); margin-bottom: 1rem; }
+
+/* Careers list */
+.jobs { display: grid; gap: 1rem; margin-top: 2rem; }
+.job {
+  background: var(--surface);
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-left: 3px solid var(--gold);
+  transition: transform var(--transition), background var(--transition);
+}
+.job:hover { transform: translateX(6px); background: var(--bg-2); }
+.job h3 { font-size: 1.1rem; margin-bottom: 0.2rem; font-family: 'Poppins', sans-serif; }
+.job .meta { color: var(--muted); font-size: 0.85rem; }
+.job .tag {
+  background: var(--gold-soft);
+  color: var(--gold);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Contact rows */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.contact-card {
+  background: var(--surface);
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  border-top: 3px solid var(--gold);
+}
+.contact-card .label {
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+.contact-card h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+.contact-card p { color: var(--muted); font-size: 0.95rem; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  background: #07070a;
+  color: #aaa;
+  padding: 3rem 0 1.5rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.footer-grid h4 { color: var(--gold); margin-bottom: 1rem; font-size: 1rem; font-family: 'Poppins', sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+.footer-grid ul { list-style: none; }
+.footer-grid li { margin-bottom: 0.5rem; }
+.footer-grid a { color: #aaa; transition: color var(--transition); }
+.footer-grid a:hover { color: var(--gold); }
+.footer-grid p { color: #888; font-size: 0.9rem; line-height: 1.7; }
+.socials { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+.socials a {
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+.socials a:hover { border-bottom-color: var(--gold); }
+.copyright {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.85rem;
+  color: #666;
+}
+.copyright .gold-text { color: var(--gold); }
+
+/* =========================================================
+   ANIMATIONS / REVEAL
+   ========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+/* =========================================================
+   PAGE HEADER (sub-pages)
+   ========================================================= */
+.page-header {
+  padding: 9rem 0 4rem;
+  text-align: center;
+  background:
+    linear-gradient(rgba(11,11,13,0.75), rgba(11,11,13,0.85)),
+    url('images/diamond_jewelry.jpg') center/cover;
+  position: relative;
+}
+.page-header h1 {
+  background: linear-gradient(135deg, #fff 30%, var(--gold) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.page-header .breadcrumb { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+.page-header .breadcrumb a { color: var(--gold); }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .menu-btn { display: block; }
+  .nav-links {
+    position: fixed;
+    top: 70px; right: 0;
+    background: var(--bg-2);
+    flex-direction: column;
+    width: 250px;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform var(--transition);
+    border-left: 1px solid rgba(212, 175, 55, 0.15);
+    height: calc(100vh - 70px);
+    gap: 1.5rem;
+  }
+  .nav-links.open { transform: translateX(0); }
+  .footer-grid { grid-template-columns: 1fr; }
+  section { padding: 4rem 0; }
+  .form { padding: 1.5rem; }
+}
