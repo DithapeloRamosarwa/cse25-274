@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Mines — Debswana Diamond Company</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">DEBSWANA</a>
+    <button class="menu-btn">≡</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="mines.html">Mines</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button class="theme-toggle">Light</button></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header" style="background: linear-gradient(rgba(11,11,13,0.7), rgba(11,11,13,0.85)), url('images/mine_pit.jpg') center/cover;">
+  <div class="container">
+    <h1>Our Mines</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> · Operations · Mines</div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">Operations Across Botswana</div>
+      <h2>Four World-Class Diamond Mines</h2>
+    </div>
+
+    <div class="image-grid">
+      <div class="image-card reveal">
+        <img src="images/mine_pit.jpg" alt="Jwaneng Mine" class="photo photo-tall">
+        <div class="body">
+          <span class="badge">FLAGSHIP</span>
+          <h3>Jwaneng Mine</h3>
+          <p>Often called "the world's richest diamond mine by value." Located in the Naledi River Valley, ~120 km west of Gaborone.</p>
+          <div class="meta"><span>Open-pit</span><span>~12M ct/yr</span></div>
+        </div>
+      </div>
+
+      <div class="image-card reveal">
+        <img src="images/landscape.jpg" alt="Orapa Mine" class="photo photo-tall">
+        <div class="body">
+          <span class="badge">LARGEST</span>
+          <h3>Orapa Mine</h3>
+          <p>The largest open-pit diamond mine in the world by area. Operating since 1971 in the Boteti district.</p>
+          <div class="meta"><span>Open-pit</span><span>~10M ct/yr</span></div>
+        </div>
+      </div>
+
+      <div class="image-card reveal">
+        <img src="images/mining_truck.jpg" alt="Letlhakane Mine" class="photo photo-tall">
+        <div class="body">
+          <h3>Letlhakane Mine</h3>
+          <p>One of Botswana's oldest mines (1975). Now focused on tailings re-treatment to extract remaining value.</p>
+          <div class="meta"><span>Tailings</span><span>~1M ct/yr</span></div>
+        </div>
+      </div>
+
+      <div class="image-card reveal">
+        <img src="images/diamond_rough.jpg" alt="Damtshaa Mine" class="photo photo-tall">
+        <div class="body">
+          <h3>Damtshaa Mine</h3>
+          <p>Comprised of four kimberlite pipes near Orapa. Care and maintenance status with future potential.</p>
+          <div class="meta"><span>Open-pit</span><span>Reserve</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTSWANA MAP -->
+    <div style="margin-top: 4rem;" class="reveal">
+      <div class="section-title">
+        <div class="eyebrow">Map</div>
+        <h2>Find Our Mines in Botswana</h2>
+      </div>
+      <iframe class="map-embed"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=20.0%2C-27.0%2C30.0%2C-17.5&layer=mapnik&marker=-22.39%2C24.74"
+        title="Botswana Map"></iframe>
+      <p style="text-align:center; color: var(--muted); font-size: 0.85rem; margin-top: 0.6rem;">
+        Jwaneng (-24.6°, 24.7°) · Orapa (-21.3°, 25.4°) · Letlhakane (-21.4°, 25.6°) · Damtshaa (-21.2°, 25.7°)
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom: 1rem;">DEBSWANA</div>
+        <p>Producing diamonds that drive a nation forward.</p>
+        <div class="socials"><a href="#">Facebook</a><a href="#">Twitter</a><a href="#">LinkedIn</a></div>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About</a></li><li><a href="journey.html">Journey</a></li><li><a href="mines.html">Mines</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><p>Debswana House, Gaborone, Botswana</p></div>
+    </div>
+    <div class="copyright">© <span id="year"></span> <span class="gold-text">Debswana Diamond Company.</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Debswana Diamond Company</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">DEBSWANA</a>
+    <button class="menu-btn">≡</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="mines.html">Mines</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button class="theme-toggle">Light</button></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> · Contact</div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="contact-info">
+      <div class="contact-card reveal">
+        <div class="label">Head Office</div>
+        <h3>Gaborone</h3>
+        <p>Debswana House,<br>Gaborone, Botswana</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="label">Phone</div>
+        <h3>+267 361 4200</h3>
+        <p>Reception</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="label">Email</div>
+        <h3>info@debswana.bw</h3>
+        <p>General inquiries</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="label">Hours</div>
+        <h3>Mon – Fri</h3>
+        <p>08:00 – 17:00 CAT</p>
+      </div>
+    </div>
+
+    <div class="section-title reveal" style="margin-top: 2rem;">
+      <div class="eyebrow">Send a Message</div>
+      <h2>We'd Love to Hear From You</h2>
+    </div>
+
+    <form class="form reveal" id="contactForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <select id="subject" required>
+          <option value="">Select an option</option>
+          <option>General Inquiry</option>
+          <option>Careers</option>
+          <option>Media / Press</option>
+          <option>Suppliers</option>
+          <option>Community</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" required placeholder="How can we help?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold" style="width: 100%;">Send Message</button>
+      <div class="form-note"></div>
+    </form>
+
+    <div style="margin-top: 4rem;" class="reveal">
+      <div class="section-title">
+        <div class="eyebrow">Find Us</div>
+        <h2>Our Location in Botswana</h2>
+      </div>
+      <iframe class="map-embed"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=20.0%2C-27.0%2C30.0%2C-17.5&layer=mapnik&marker=-24.65%2C25.91"
+        title="Debswana Botswana Map"></iframe>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom: 1rem;">DEBSWANA</div>
+        <p>A partnership between De Beers Group and the Government of Botswana.</p>
+        <div class="socials"><a href="#">Facebook</a><a href="#">Twitter</a><a href="#">LinkedIn</a></div>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About</a></li><li><a href="journey.html">Journey</a></li><li><a href="mines.html">Mines</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><p>Debswana House, Gaborone, Botswana</p></div>
+    </div>
+    <div class="copyright">© <span id="year"></span> <span class="gold-text">Debswana Diamond Company.</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
